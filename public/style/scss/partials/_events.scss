@@ -1,0 +1,29 @@
+@import 'carousel';
+@import 'midsquare';
+
+main {
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;   
+    z-index: 1;
+    .mid-square {
+        //height: auto;
+        //max-height: 50vh;
+        width: 500px;
+        background-color: transparent;
+        background-image: none;
+        opacity: 1;
+        .fb-path {
+            width: 100%;
+            position: absolute;
+            bottom: 0;
+            background-color: #FFF;
+            height: 50px;
+            place-items: center;
+            p {
+                margin-bottom: 0;
+            }
+        }
+    }
+}

@@ -1,0 +1,167 @@
+@import 'carousel';
+@import 'midsquare';
+
+%arrow-styles {
+    position: absolute;
+    bottom: 0.25rem;
+    color: #FFF;
+    cursor: pointer;
+    font-size: 0.75rem;
+    line-height: 1.5rem;   
+    &:hover, &:focus {
+        text-decoration: none;
+    }    
+}
+
+main {
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;   
+    z-index: 1;
+    .mid-square {
+        article {
+            position: relative;
+            width: 92.5%;
+            height: 100%;
+            background-color: #000;
+            .article-content {
+                h2 {
+                    margin-top: 1rem;
+                    padding: 0 0 0 1rem;
+                    font-size: 1.25rem;
+                    line-height: 3rem;
+                    color: #CCC;
+                    @extend %text-shadow;
+                    background-color: #1D1D1D;
+                    border-bottom: 1px dotted #666;
+                }
+                blockquote {
+                    height: 80%;
+                    place-content: center;
+                    padding: 1rem;  
+                    figure {
+                        max-width: 33%;
+                        img {
+                            max-width: 100%;
+                            border: 1px inset $theme-red;
+                        }
+                    }
+                    p {
+                        width: 66%;
+                        padding-left: 1rem;
+                        color: #FFF;
+                        font-size: 0.75rem;
+                        font-weight: 200;
+                        letter-spacing: 0.05rem;
+                    }
+                    .artist-box {
+                        height: 370px;
+                        h4 {
+                            padding-bottom: 1.5rem;
+                            color: $theme-red;
+                            font-size: 1rem;
+                        }
+                        .artist-photo {
+                            width: 120px;
+                            margin-left: 1rem;
+                        }  
+                        p {
+                            width: calc(100% - 150px)
+                        }
+                        .arrow {
+                            text-align: left;
+                            position: absolute;
+                            width: 50%;
+                            bottom: 0;
+                            left: 0;
+                            color: $theme-red;
+                            &[data-action="scroll-up"] {
+                                text-align: right;
+                                left: auto;
+                                right: 0;
+                            }
+                        }
+                    }
+                }
+                a {
+                    .fa-angle-right {
+                        padding-left: 0.5rem; 
+                    }
+                    .fa-angle-left {
+                        padding-right: 0.5rem; 
+                    }             
+                    &.prev {
+                        @extend %arrow-styles;
+                        left: 1rem;
+                    }
+                    &.next {
+                        @extend %arrow-styles;
+                        right: 1rem;
+                    }
+                }     
+            }
+        }        
+        @include media-min-768px {
+            height: 750px;
+            width: 510px;
+            top: 0;
+            left: 220px;
+            flex-direction: row-reverse;
+            transform: rotate(-90deg);           
+            #artistData {
+                .article-content {
+                    position: absolute;
+                    height: 510px;
+                    width: 700px;
+                    bottom: 16vh;
+                    padding: 1rem 0;                
+                    left: -10vw;  
+                    transform: rotate(-270deg);
+                    > blockquote {
+                        overflow-x: hidden;
+                        overflow-y: scroll;
+                        place-content: baseline;
+                        scroll-behavior: smooth;
+                        -ms-overflow-style: none;
+                        scrollbar-width: none;
+                        &::-webkit-scrollbar {
+                            display: none;
+                        }
+                    }
+                }
+            }
+        }
+        @include media-max-768px {
+            article {
+                width: auto;
+                height: auto;
+                .article-content {
+                    a.prev, a.next {
+                        display: none;
+                    }
+                }
+            }   
+        }
+        @include media-max-576px {
+            article {
+                .article-content {
+                    blockquote {
+                        .artist-box {
+                            height: auto;
+                            max-width: 100%;
+                            .artist-photo {
+                                width: auto;
+                                max-width:300px;
+                            }
+                            p {
+                                width: 100%;
+                            }
+                        }
+
+                    }
+                }
+            }
+        }
+    }
+}

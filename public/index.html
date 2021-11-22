@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport"       content="width=device-width, initial-scale=1" />
+    <meta name="theme-color"    content="#000000" />
+    <meta name="description"    content="The Offical Website of the Balkanamera JazzQ Band" />
+    <meta name="keywords"       content="Balkan Jazz, Balkanamera, Balkan Fusion" />
+    <link rel="shortcut icon"       href="%PUBLIC_URL%/favicon.ico" />
+    <link rel="apple-touch-icon"    href="%PUBLIC_URL%/logo192.png" />
+    <link rel="manifest"            href="%PUBLIC_URL%/manifest.json" />
+    <link rel="canonical shortlink" href="%PUBLIC_URL%" />     
+      
+    <meta name="twitter:card"       content="summary" />
+    <meta name="twitter:site"       content="@iurianu" />
+    <meta property="og:type"        content="website" />
+    <meta property="og:locale"      content="ro_RO" />
+      
+    <title>Balkanamera JazzQ</title>
+      
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />      
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />     
+      
+  </head>
+  <body>
+    <script>
+      window.fbAsyncInit = function() {
+        FB.init({
+          appId            : '208083348133456',
+          autoLogAppEvents : true,
+          xfbml            : true,
+          version          : 'v12.0'
+        });
+      };
+    </script>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v5.0" ></script>
+    <noscript>You need to enable JavaScript to run this page.</noscript>
+      
+    <div id="root" class="container-fluid"></div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script src="./scripts/footer_plugins.js"></script>
+    <script src="./scripts/custom.js"></script>  
+    <script>
+        
+        jQuery(document).on('change', function( $ ) {
+                
+            /* Set expand properties on navbar */
+            if ( $('#nav-action').attr('aria-expanded') == 'false') {
+                $('#navigation').css('width', '100%');
+            } else {
+                $('#navigation').css('width', 'auto');
+            }               
+        })  
+
+        jQuery(document).ready( function( $ ) {
+                
+            /* Remove class show from navbar on page change */
+            $('#navigation').on( 'click', function() {
+                $('#navbarSupportedContent').removeClass('show');
+                $('#nav-action').attr('aria-expanded', 'false');
+            }) 
+
+            $(function () {
+                $('[data-toggle="tooltip"]').tooltip()
+            })                
+
+            $('#footer').stickyFooter({
+                dropup_speed_show : 300, // Time (in milliseconds) to show a drop down
+                dropup_speed_hide : 300, // Time (in milliseconds) to hide a drop down
+                dropup_speed_delay : 100, // Time (in milliseconds) before showing a drop down
+                footer_effect : 'hover_fade', // Drop down effect, choose between 'hover_fade', 'hover_slide', etc.
+                showhidefooter : 'hide', // Footer can be hidden when the page loads
+                hide_speed : 2000, // Time to hide the footer (in milliseconds) if the 'showhidefooter' option is set to 'hide'
+                hide_delay : 2000 // Time before hiding the footer (in milliseconds) if the 'showhidefooter' option is set to 'hide'
+            });            
+        })
+    </script>
+      
+  </body>
+</html>

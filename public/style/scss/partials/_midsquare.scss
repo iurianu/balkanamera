@@ -1,0 +1,28 @@
+.mid-square {
+    position: fixed;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    height: 450px;
+    width: 750px;
+    background-image: url('./../images/bgs/bg_black_70.png');
+    background-size: cover;
+    background-position: top center;
+    top: 125px;
+    left: 75px;
+    box-shadow: 2px 2px 5px black;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    &::-webkit-scrollbar {
+        display: none;
+    }
+    @include media-max-992px {
+        left: calc(50% - (750px / 2));
+    }
+    @include media-max-768px {
+        
+    }
+}

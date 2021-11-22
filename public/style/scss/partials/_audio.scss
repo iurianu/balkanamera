@@ -1,0 +1,149 @@
+@import 'carousel';
+@import 'midsquare';
+
+main {
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;   
+    z-index: 1;
+    .mp_song_info {
+        display: none;
+    }
+    .mid-square {
+        h2 {
+            color: $theme-red;
+            font-size: 1rem;
+            font-weight: 700;
+            padding: 1rem;
+        }
+        article {
+            position: relative;
+            width: 100%;
+            height: 450px;
+            overflow-x: hidden;
+            overflow-y: scroll;
+            place-content: baseline;
+            scroll-behavior: smooth;
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+            &::-webkit-scrollbar {
+                display: none;
+            }             
+            blockquote {
+                width: 100%;
+            }
+            figure {
+                img {
+                    max-width: 100%;
+                }
+            }
+            ul {
+                li {
+                    position: relative;
+                    margin-bottom: 0.25rem;
+                    button {
+                        color:#FFF;
+                        border-radius: 50%;
+                        border: 1px solid #FFF;
+                        padding: 0.125rem 0.35rem;    
+                        margin-right: 1rem;
+                        font-size: 50%;
+                    }
+                    &:after {
+                        position: absolute;
+                        font-size: 0.75rem;
+                        color: $theme-red;
+                        top: 0.25rem;
+                    }
+                }
+            }
+            .arrow {
+                position: absolute;
+                bottom: 1rem;
+                text-align: center;
+                width: 100%;
+                color: #FFF;
+                &[data-action="scroll-up"] {
+                    bottom: auto;
+                    top: 1rem;
+                }
+            }            
+        }
+    } 
+    @include media-max-768px {
+        .mid-square {
+            article {
+                height: auto;
+                &#allAlbums {
+                    min-height: 40vh;
+                }
+            }
+        }
+    }
+}
+
+#SatchmoRevival {
+    li {
+        &:first-of-type::after {
+            content: "I Can't Give You Anything but Love";
+        }
+        &:nth-of-type(2)::after {
+            content: "Cheek to Cheek";
+        }
+        &:nth-of-type(3)::after {
+            content: "What a Difference Does it Make";
+        }
+        &:nth-of-type(4)::after {
+            content: "Sandu";
+        }
+        &:nth-of-type(5)::after {
+            content: "In a Sentimental Mood";
+        }
+        &:nth-of-type(6)::after {
+            content: "When You're Smiling";
+        }
+        &:nth-of-type(7)::after {
+            content: "Mary's Blues";
+        }
+        &:nth-of-type(8)::after {
+            content: "You'd Better";
+        }
+        &:nth-of-type(9)::after {
+            content: "What a Wonderful World";
+        }
+        &:last-of-type::after {
+            content: "Day In, Day Out";
+        }
+    }
+}
+
+#MioriticStuff {
+    li {
+        &:first-of-type::after {
+            content: "Jocul";
+        }
+        &:nth-of-type(2)::after {
+            content: "Lena's Tune";
+        }
+        &:nth-of-type(3)::after {
+            content: "Mioritic Stuff";
+        }
+        &:nth-of-type(4)::after {
+            content: "Pretty Close";
+        }
+        &:nth-of-type(5)::after {
+            content: "Just in Salsa";
+        }
+        &:nth-of-type(6)::after {
+            content: "Rainy Day in Istanbul";
+        }
+        &:nth-of-type(7)::after {
+            content: "Bordeiaş, borderi, bordei";
+        }
+        &:last-of-type::after {
+            content: "Bun e vinu' ghiurghiuliu";
+        }
+    }
+}
+

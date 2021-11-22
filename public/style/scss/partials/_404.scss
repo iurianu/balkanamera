@@ -1,0 +1,186 @@
+$theme-color-dark: #666;
+$theme-color-bright: #a8a8a8;
+
+header {
+    background-color: #FFF;
+    .bars {
+        .bar {
+            background-color: $theme-color-dark;
+            &:before, &:after {
+                background-color: $theme-color-dark;
+            }
+        }
+    }
+}
+
+@include media-min-992px {
+    header {       
+        &:not(.sticky) {   
+            background-color: #FFF;
+            #main-navigation .nav-item {
+                a {
+                    color: $theme-color-dark;
+                    &.active, &:hover {
+                        color: $theme-color-bright;
+                    }                    
+                } 
+            }
+        }
+    }
+}
+
+%contain {
+    height: auto;
+    margin: 0 auto;
+    text-align: center;
+}
+
+%text-styles {
+    font-family: 'Lobster', cursive;
+    font-weight: 400;
+}
+
+.page-404 {
+    h1 {
+        @extend %text-styles;
+        font-size: 1.5rem;
+    }    
+    h2 {
+        @extend %text-styles;
+        font-family: 'Josefin Sans', 'Calibri', 'Arial', sans-serif;
+        font-size: 1.75rem
+    }
+    p {
+        @extend %text-styles;
+        font-size: 1.5rem;
+    }
+    #Spinner {
+        transform-origin: 50% 50%;
+    }
+    .compass-container {
+        @extend %contain;
+        max-width: 200px;        
+    }
+    .message {
+        @extend %contain;
+    }
+    .button {
+        height: 50px;
+        color: #555;
+        letter-spacing: 0.1rem;
+        text-transform: uppercase;
+        text-decoration: none;
+        white-space: nowrap;
+        background-color: #eee;
+        border-radius: 4px;
+        border: 1px solid #bbb;
+        cursor: pointer;
+        box-sizing: border-box;
+        place-self: center;
+        .fa-question {
+            font-size: 1.2rem;
+        }
+        .far, .fa-home {
+            font-size: 1.5rem;
+        }
+    }
+    .btn-effect {
+        overflow: hidden;
+        position: relative;
+        width: 160px;
+        max-width: 100%;
+        span {
+            display: block;
+            transition: all 0.2s ease;            
+        }
+    } 
+    @include media-min-768px {
+        h1 {
+            font-size: 2rem;
+        }
+        .btn-effect {
+            span {
+                &:first-child {
+                    place-self: center;
+                    transform: translate(0);
+                }
+                &:last-child {
+                    transform: translateY(200%) translateX(-50%);
+                    position: absolute;
+                    left: 50%;
+                    top: 80%;
+                }
+            }  
+            &:hover {
+                span {
+                    &:first-child {
+                        place-self: center;
+                        transform: translateY(-200%);
+                    }
+                    &:last-child {
+                        transform: translateY(-100%) translateX(-50%);
+                    }
+                }
+            }
+        }        
+    } 
+    @include media-max-768px {
+        .btn-effect {
+            span {
+                &:first-child {display: none}
+                &:last-child {
+                    place-self: center;
+                    transform: translate(0);
+                }
+            }
+        }        
+    }
+}
+
+%svg-fill {
+    fill: none;
+    stroke: #000;
+    stroke-miterlimit: 10  
+}
+
+%svg-dash {
+    stroke-width: 0.5px;
+    stroke-dasharray: 12.002400398254395     
+}
+
+.compass-container {
+    svg {
+        #Base {
+            #line-1 {
+                @extend %svg-fill;
+                @extend %svg-dash;
+            }
+            #line-2 {
+                @extend %svg-fill;
+                @extend %svg-dash;            
+            }
+            #line-3 {
+                @extend %svg-fill;
+                @extend %svg-dash;            
+            }
+            #line-4 {
+                @extend %svg-fill;
+                @extend %svg-dash;            
+            }
+            #circle {
+                @extend %svg-fill;
+            }
+        }
+        #Spinner {
+            transform: rotate(37.9295deg);
+            #white-polygon {
+                fill: #FFF;
+            }
+            #circle-2 {
+                fill: #FFF;
+                stroke: #000;
+                stroke-miterlimit: 10            
+            }
+        }        
+    }
+}

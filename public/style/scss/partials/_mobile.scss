@@ -1,0 +1,57 @@
+@media (max-width: 767px) {
+
+    body {
+        background-color: #000;
+    }
+    main {
+        position: relative;
+        height: auto;
+        .mid-square {
+            background-color: #000;
+            position: relative;
+            height: auto;
+            top: 0;
+            left: 0;
+            margin-bottom: 1rem;
+        }
+        &#events {
+            .mid-square {
+                width: 100%;
+                place-content: center;
+            }
+        }
+    }
+    .full-page-carousel {
+        padding: 0;
+        max-height: 40vh;
+        .carousel-inner, .carousel-item {
+            min-height: 40vh;
+            img {
+                height: 40vh;
+                min-width: 100vw;
+            }
+        }
+    }
+    
+    ul {
+        &#footer {
+            display: block !important;
+        }
+    }
+    
+    a {
+        &#footer_trigger {
+            display: none;
+        }
+    } 
+}
+
+@media (max-width: 575px) {
+    main {
+        .mid-square {
+            .fb-path {
+                width: 300px;
+            }
+        }
+    }
+}
