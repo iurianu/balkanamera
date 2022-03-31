@@ -23,6 +23,10 @@ In the terminal, navigate to the project direcytory, and run:
 
 `npm install`
 
+or
+
+`yarn`
+
 After installing, you must go to the terminal, back in the project directory, and run:
 
 `yarn start`
@@ -69,3 +73,8 @@ yarn.lock
 </pre>
 
 ***Code carefully!***
+
+<hr>
+
+> The code belongs to its owner  
+> Anyone can use it for documentation or comparison purposes
